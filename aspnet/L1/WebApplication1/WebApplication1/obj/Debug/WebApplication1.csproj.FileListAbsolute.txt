@@ -1,0 +1,14 @@
+C:\Users\Hanna\Desktop\ASPNET\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+C:\Users\Hanna\Desktop\ASPNET\WebApplication1\WebApplication1\bin\WebApplication1.dll
+C:\Users\Hanna\Desktop\ASPNET\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+C:\Users\Hanna\Desktop\ASPNET\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.AssemblyReference.cache
+C:\Users\Hanna\Desktop\ASPNET\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.CoreCompileInputs.cache
+C:\Users\Hanna\Desktop\ASPNET\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\Hanna\Desktop\ASPNET\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\Hanna\Desktop\ASPNET\L1\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+C:\Users\Hanna\Desktop\ASPNET\L1\WebApplication1\WebApplication1\bin\WebApplication1.dll
+C:\Users\Hanna\Desktop\ASPNET\L1\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+C:\Users\Hanna\Desktop\ASPNET\L1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.AssemblyReference.cache
+C:\Users\Hanna\Desktop\ASPNET\L1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.CoreCompileInputs.cache
+C:\Users\Hanna\Desktop\ASPNET\L1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\Hanna\Desktop\ASPNET\L1\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb

@@ -1,0 +1,230 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication3\\webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication3\\webapplication3\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication3\\webapplication3\\views\\login\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\login\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication3\\webapplication3\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication3\\webapplication3\\customhtmlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\customhtmlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication3\\webapplication3\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication3\\webapplication3\\views\\shared\\anotherlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\shared\\anotherlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication3\\webapplication3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication3\\webapplication3\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication3\\webapplication3\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication3\\webapplication3\\views\\login\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\login\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication3\\webapplication3\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication3\\webapplication3\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56D92AB6-7F93-4D38-8EA4-9742F34F35C8}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomHtmlHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\CustomHtmlHelper.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\CustomHtmlHelper.cs",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\CustomHtmlHelper.cs",
+              "RelativeToolTip": "WebApplication3\\CustomHtmlHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T15:14:41.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Views\\Login\\Login.cshtml",
+              "RelativeDocumentMoniker": "WebApplication3\\Views\\Login\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Views\\Login\\Login.cshtml",
+              "RelativeToolTip": "WebApplication3\\Views\\Login\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T14:53:14.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Views\\Login\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication3\\Views\\Login\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Views\\Login\\Index.cshtml",
+              "RelativeToolTip": "WebApplication3\\Views\\Login\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T14:46:09.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Program.cs",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Program.cs",
+              "RelativeToolTip": "WebApplication3\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T14:43:00.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "WebApplication3\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T14:40:04.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Views\\Login\\Error.cshtml",
+              "RelativeDocumentMoniker": "WebApplication3\\Views\\Login\\Error.cshtml",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Views\\Login\\Error.cshtml",
+              "RelativeToolTip": "WebApplication3\\Views\\Login\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T14:55:08.432Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Models\\LoginModel.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Models\\LoginModel.cs",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Models\\LoginModel.cs",
+              "RelativeToolTip": "WebApplication3\\Models\\LoginModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T14:42:13.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AnotherLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Views\\Shared\\AnotherLayout.cshtml",
+              "RelativeDocumentMoniker": "WebApplication3\\Views\\Shared\\AnotherLayout.cshtml",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Views\\Shared\\AnotherLayout.cshtml",
+              "RelativeToolTip": "WebApplication3\\Views\\Shared\\AnotherLayout.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAkwDIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T16:51:23.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplication3\\appsettings.json",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\appsettings.json",
+              "RelativeToolTip": "WebApplication3\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-08T14:54:51.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Views\\Login\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "WebApplication3\\Views\\Login\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Views\\Login\\Privacy.cshtml",
+              "RelativeToolTip": "WebApplication3\\Views\\Login\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T14:55:27.736Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "WebApplication3\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "WebApplication3\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T14:54:46.246Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "WebApplication3\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "WebApplication3\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T14:54:47.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebApplication3\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication3\\WebApplication3\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebApplication3\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T16:36:40.792Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+Który kontener serwerowy jest najwłaściwszy do przechowywania takiego kontekstu dostępu do danych (Application, Session czy Items)?
+
+nAJWLASCIWSZYM kontenerem do przechowywania kontekstu dostępu do danych jest Items. Jest to spowodowane tym, że obiekty takie jak SqlConnection czy DataContext powinny być tworzone i wykorzystywane tylko na czas przetwarzania pojedynczego żądania, a następnie zwalniane
+
+
+Jakie skutki uboczne miałoby przechowywanie kontekstu dostępu do danych nie w tym właściwym, ale w którymś z pozostałych
+kontenerów (co oczywiście technicznie jest możliwe)?
+
+Application – Przechowywanie kontekstu w Application spowodowałoby, że ten sam obiekt dostępowy byłby współdzielony przez wiele równoczesnych żądań. 
+Skutkuje to ryzykiem wyścigu danych oraz trudnościami w zarządzaniu zasobami.
+Session – Przechowywanie kontekstu w Session przypisałoby ten sam obiekt dostępowy do całej sesji użytkownika. Mogłoby to prowadzić do wycieków pamięci, ponieważ obiekt DataContext nie byłby zwalniany po zakończeniu żądania.

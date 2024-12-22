@@ -1,0 +1,22 @@
+Przekierowywanie żądań w aplikacjach webowych może odbywać się na różne sposoby, w zależności od tego, po której stronie (przeglądarki lub serwera) oraz z jakimi efektami końcowymi chcemy to wykonać. Oto wyjaśnienie sposobów:
+
+(a) Hyperlink po stronie przeglądarki
+Opis: Przekierowanie poprzez kliknięcie linku (element <a href="URL"> w HTML).
+Działanie: Przekierowanie odbywa się po stronie przeglądarki, gdy użytkownik kliknie link, przeglądarka wykonuje żądanie GET do docelowego URL.
+
+
+(b) POST między stronami (strona X pobrana z serwera zawiera formularz wykonujący POST do strony Y)
+Opis: Przekierowanie z jednej strony na drugą przy użyciu formularza HTML z metodą POST.
+Działanie: Formularz na stronie X wysyła dane na stronę Y poprzez żądanie POST.
+
+(c) Response.Redirect na serwerze
+Opis: Metoda Response.Redirect("URL") w ASP.NET, która wykonuje przekierowanie po stronie serwera.
+Działanie: Serwer wysyła odpowiedź 302 do przeglądarki, informując o konieczności wykonania nowego żądania do docelowego URL.
+
+(d) Server.Transfer na serwerze
+Opis: Metoda Server.Transfer("URL") w ASP.NET, która wykonuje przekierowanie wewnętrzne po stronie serwera.
+Działanie: Przekierowanie odbywa się wyłącznie na serwerze, bez powiadamiania przeglądarki – żądanie nie opuszcza serwera, a serwer wykonuje nową stronę.
+
+
+nie zmienia url,
+szybsze bo nie wymaga drugiego zadania

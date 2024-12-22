@@ -1,0 +1,27 @@
+Czym różni się serwer deweloperski (IIS Express) od serwera produkcyjnego (IIS)?
+
+IIS Express: Jest to lekka, uproszczona wersja IIS, stworzona głównie do lokalnego rozwoju i testowania aplikacji. Jest prosty w konfiguracji, ma mniej funkcji i jest zoptymalizowany do pracy na komputerze dewelopera.
+IIS (produkcyjny): Pełna wersja IIS przeznaczona do uruchamiania aplikacji w środowisku produkcyjnym. Obsługuje większą liczbę funkcji, takich jak zarządzanie certyfikatami SSL, zaawansowane logowanie, autoryzację, autentykację, balansowanie obciążenia i inne.
+
+
+Który rodzaj publikacji (FTP, HTTP,
+File system...) jest najwygodniejszy w sytuacji gdy zarówno serwer deweloperski jak i
+produkcyjny znajdują się na tej samej maszynie?
+
+1. File System
+Publikacja do lokalnego folderu na dysku, skąd można ręcznie skopiować pliki na serwer produkcyjny (jeśli np. serwer IIS i środowisko deweloperskie znajdują się na tej samej maszynie).
+Najwygodniejsza metoda w przypadku publikacji na tej samej maszynie, ponieważ pozwala na łatwe kopiowanie plików do odpowiedniego katalogu serwera IIS.
+2. FTP
+Jeśli serwer produkcyjny znajduje się na innej maszynie (zdalny serwer), można skonfigurować połączenie FTP, by przesłać pliki bezpośrednio na serwer.
+FTP jest wygodne, jeśli masz dostęp do serwera produkcyjnego przez FTP i nie musisz korzystać z bardziej skomplikowanych mechanizmów jak Web Deploy.
+3. Web Deploy
+Służy do automatycznego publikowania aplikacji na serwer IIS za pomocą protokołu HTTP. Umożliwia łatwe przesyłanie aplikacji na zdalny serwer IIS, zachowując ustawienia aplikacji, migracje bazy danych, oraz umożliwia synchronizację aplikacji między środowiskiem deweloperskim a produkcyjnym.
+Najwygodniejsza opcja dla zdalnych serwerów IIS, gdy masz odpowiednio skonfigurowany serwer i dostęp przez Web Deploy.
+
+Dla serwera lokalnego (ta sama maszyna): Najwygodniejszą metodą będzie publikacja za pomocą File System, a następnie ręczne skopiowanie plików do odpowiedniego katalogu na serwerze IIS.
+
+
+A jak radzić sobie z publikacją na zdalny
+serwer produkcyjny?
+
+Dla serwera zdalnego: Web Deploy jest najczęściej zalecany, gdy serwer IIS jest odpowiednio skonfigurowany do obsługi tego narzędzia, ale FTP może być alternatywą, jeśli dostęp do Web Deploy jest ograniczony.

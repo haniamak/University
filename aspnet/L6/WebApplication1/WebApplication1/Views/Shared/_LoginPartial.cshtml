@@ -1,0 +1,6 @@
+﻿@model LoginModel
+
+<form method="post" action="/Login/Index">
+    @Html.LoginFor(m => m.Login, m => m.Password)
+    <button type="submit">Submit</button>
+</form>

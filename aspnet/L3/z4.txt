@@ -1,0 +1,27 @@
+Nauczyć się różnic między kontenerami serwerowymi
+
+Application – Jest współdzielony przez wszystkie sesje i wszystkich użytkowników aplikacji. Dane są dostępne przez cały cykl życia aplikacji.
+Session – Ten kontener przechowuje dane specyficzne dla danej sesji użytkownika. Dane dostępne są tylko przez czas trwania jednej sesji. (czas trwania sesji około 15 minut)
+Items – Przechowuje dane dla jednego żądania HTTP i jest zwalniany po jego zakończeniu.
+
+
+HttpContext.Application["appKey"] = "GlobalValue";
+
+
+HttpContext.Session["sessionKey"] = "UserSpecificValue";
+
+
+HttpContext.Items["requestKey"] = "RequestSpecificValue";
+
+Dostep do Application wymaga dodatkowej ochrony - dajemy lock na get
+
+Którego
+kontenera mogłoby w ogóle nie być w interfejsie programistycznym, bo jest on równoważny
+pewnemu innemu prostemu mechanizmowi samego języka programowania? ITEMS bo działa jak zmienne lokalne
+
+SINGLETON
+To jest taka konstrukcja kiedy potrzebujesz tylko jedną instancję jakiegoś obiektu w całej aplikacji. 
+Przykładem może być połączenie z bazą danych, albo np. timer/scheduler który co pewien czas uruchamia jakieś akcje. 
+Zasadniczo w całej aplikacji nie potrzeba tych obiektów więcej, bo jeden jest w stanie wszystko obsługiwać. 
+Singleton ułatwia "pozyskiwanie" takiego obiektu (więc w prosty sposób z dowolnego miejsca możesz się odwołać do tej bazy danych na przukład) 
+i kontroluje też żeby nikt przypadkiem nie tworzył takich obiektów. Może tak być że mamy ograniczoną liczbę połączeń z bazą danych i bardzo nie chcielibyśmy żeby ktoś nam nagle utworzył ich 1000

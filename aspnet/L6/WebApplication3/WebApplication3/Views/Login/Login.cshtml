@@ -1,0 +1,15 @@
+﻿@model LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<p>Login</p>
+<form method="post" action="/Login/Index">
+    @Html.Login("Login", "Password")
+    <button type="submit">Submit</button>
+</form>
+
+<form method="post" action="/Login/Index">
+    @Html.LoginFor(m => m.Login, m => m.Password)
+    <button type="submit">Submit</button>
+</form>

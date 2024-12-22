@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication3</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        /* Niestandardowe style */
+        header {
+            background-color: #007bff; /* Niebieski nagłówek */
+            color: white;
+            padding: 10px 0;
+        }
+
+        footer {
+            background-color: #f8f9fa; /* Jasnoszary stopka */
+            padding: 10px 0;
+        }
+
+        main {
+            background-color: #e9ecef; /* Jasnoszare tło dla treści */
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-4">
+        @if (IsSectionDefined("Header"))
+        {
+            <header>
+                @RenderSection("Header", required: false)
+            </header>
+        }
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted text-center">
+        <div class="container">
+            &copy; 2024 - WebApplication3
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

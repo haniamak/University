@@ -1,0 +1,17 @@
+﻿@model WebApplication5.Models.StudentModel
+@using WebApplication5.Data
+
+<h1>Usun Studenta</h1>
+
+<h2>Czy na pewno chcesz usunac tego studenta?</h2>
+
+<div>
+    <h4>@Model.Name @Model.Surname @Model.Email</h4>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Delete" />
+</form>
+
+<a asp-action="Index">Powrót</a>

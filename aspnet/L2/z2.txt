@@ -1,0 +1,25 @@
+tools -> options -> connections -> port na jakim nasluchuje fiddler 8888
+
+nie chcemy przechwytach ruchu z każdej strony, chcemy nakladac FILTRY
+Filters -> Use Filters -> Show only the following hosts -> localhost;
+
+przechodzimy do zakładki INSPECTORS
+górny panel - panel żadania
+dolny panel - panel odpowiedzi
+możemy ogladac zadanie w roznych perspektywach, szczególnie w RAW
+
+jak ustawić PULAPKE?
+można ustawić pulapke na zadanie (strzalka do góry)
+wtedy po kliknieciu f5 na te strone debugger przechwycil te pulapke i zadanie zostało nie obsluzone
+ale możemy wyedytowac to zadanie
+klikamy zielone RUN TO COMPLETION by przeslac zadanie dalej i dostać odpowiedz
+STRZALKA W DOL
+to jest pulapka na ODPOWIEDZ 
+nie możemy wtedy już edytować zadania, ale możemy wyedytowac odpowiedz, po kliknieciu run to completion 
+zostanie wyslana nasza zmieniona odpowiedz
+
+możemy KOMPONOWAC zadania:
+ABY DODAC Request type należy prawym kliknąć na pasek opisu requestow -> customise columns-> collection : miscelenous -> Field name : Request Method
+kopiujemy z inspectora wcześniejsze zadanie typu get -> Composer -> Raw -> wklejamy i klikamy execute
+możemy tez wziąć zadanie poprzednie przeciagnac je w zakldce parsed i się skopije cale zadanie
+możemy tez wiekszosc tego zadania usunąć i zostawić samego hosta i itak się zadanie wysle

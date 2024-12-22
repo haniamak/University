@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\inetpub\aplikacja2</_PublishTargetUrl>
+    <History>True|2024-10-20T17:26:26.3637112Z||;False|2024-10-20T19:22:50.1282480+02:00||;False|2024-10-20T19:20:53.5516386+02:00||;True|2024-10-20T16:47:48.9401183+02:00||;True|2024-10-20T16:47:35.5090937+02:00||;True|2024-10-20T16:32:54.8791469+02:00||;True|2024-10-20T16:24:46.5680229+02:00||;False|2024-10-20T16:22:56.5322816+02:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

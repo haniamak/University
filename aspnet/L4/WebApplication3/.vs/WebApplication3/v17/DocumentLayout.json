@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L4\\WebApplication3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{71B6B29A-3ECD-4099-889F-7554C0203A4C}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l4\\webapplication3\\webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71B6B29A-3ECD-4099-889F-7554C0203A4C}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71B6B29A-3ECD-4099-889F-7554C0203A4C}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l4\\webapplication3\\webapplication3\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71B6B29A-3ECD-4099-889F-7554C0203A4C}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71B6B29A-3ECD-4099-889F-7554C0203A4C}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l4\\webapplication3\\webapplication3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{71B6B29A-3ECD-4099-889F-7554C0203A4C}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71B6B29A-3ECD-4099-889F-7554C0203A4C}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l4\\webapplication3\\webapplication3\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{71B6B29A-3ECD-4099-889F-7554C0203A4C}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71B6B29A-3ECD-4099-889F-7554C0203A4C}|WebApplication3\\WebApplication3.csproj|c:\\users\\hanna\\desktop\\aspnet\\l4\\webapplication3\\webapplication3\\webapplication3.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{71B6B29A-3ECD-4099-889F-7554C0203A4C}|WebApplication3\\WebApplication3.csproj|solutionrelative:webapplication3\\webapplication3.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L4\\WebApplication3\\WebApplication3\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "WebApplication3\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L4\\WebApplication3\\WebApplication3\\appsettings.Development.json",
+              "RelativeToolTip": "WebApplication3\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-26T21:59:27.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L4\\WebApplication3\\WebApplication3\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Program.cs",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L4\\WebApplication3\\WebApplication3\\Program.cs",
+              "RelativeToolTip": "WebApplication3\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T15:54:27.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L4\\WebApplication3\\WebApplication3\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplication3\\appsettings.json",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L4\\WebApplication3\\WebApplication3\\appsettings.json",
+              "RelativeToolTip": "WebApplication3\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-17T22:47:54.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WebApplication3.http",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L4\\WebApplication3\\WebApplication3\\WebApplication3.http",
+              "RelativeDocumentMoniker": "WebApplication3\\WebApplication3.http",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L4\\WebApplication3\\WebApplication3\\WebApplication3.http",
+              "RelativeToolTip": "WebApplication3\\WebApplication3.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-11-17T20:50:08.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Class.cs",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L4\\WebApplication3\\WebApplication3\\Class.cs",
+              "RelativeDocumentMoniker": "WebApplication3\\Class.cs",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L4\\WebApplication3\\WebApplication3\\Class.cs",
+              "RelativeToolTip": "WebApplication3\\Class.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAzwDAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T20:50:04.313Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

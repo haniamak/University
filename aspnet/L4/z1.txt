@@ -1,0 +1,25 @@
+klasa route - parsuje zadanie rozpoznaje konwencje adresowania i przekazuje ja do odpowiedniego handlera
+routing jest opcjonalny (w sensie ten nie statysczny) bo statyczny jest obowiązkowy 
+
+Request wyposażymy teraz w Requestcontext -> RouteData struktura asjocjcjacyjna - kojary klucze z wartościami
+z tego będzie korzystal handler z tych klucz wartość
+GetVirtualPath otrzyuje tablice kluczy i wartości i produkuje stringa jaka jest bieżąco sciezka
+
+
+zadanie1
+
+z httpcontext dostajemy się do bieżącego zadania
+dostajemy się do urla przez apprelativecurrebtexecutiobfilepath
+
+string split do wylawaiania poszczególnych segmentow adresu -> można było uzyc reggexa np.
+
+na pustej sciezce zwracamy null czyli wycfujemy się z obsługiwania domyślnej sciezki(wywalamy blad 404)
+
+natomiast gdy segmentow jest więcej niż jeden:
+
+- tenata laczymy z pierwszym segmentem w sciezce
+- defaultpageextansion - sprawdza czy ostatni segment konczy się na .html
+	- jeżeli jest .html to latwo nam okreslic pagename i sitename (pagename to osttani segment a sitename to wszystko miedzy pierwszym i osttanim)
+	- jeśli nie to sitename biore wszystko  a pagename ustawiam na domyślny czyli index.html
+
+Multitenant aplication - jedna aplikacja obsługuje wielu klientów (tenantów). Zapobiegamy powielaniu kodu, upraszczamy np. aktualizacje (jedna zamiast n dla n klientów), znacząco zwiększając skalowalność.

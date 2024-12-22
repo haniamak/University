@@ -1,0 +1,149 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{921B4F2C-CB1B-4B0E-A5D3-E9D3F0AE3F50}|WebApplication5\\WebApplication5.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication5\\webapplication5\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{921B4F2C-CB1B-4B0E-A5D3-E9D3F0AE3F50}|WebApplication5\\WebApplication5.csproj|solutionrelative:webapplication5\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{921B4F2C-CB1B-4B0E-A5D3-E9D3F0AE3F50}|WebApplication5\\WebApplication5.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication5\\webapplication5\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{921B4F2C-CB1B-4B0E-A5D3-E9D3F0AE3F50}|WebApplication5\\WebApplication5.csproj|solutionrelative:webapplication5\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{921B4F2C-CB1B-4B0E-A5D3-E9D3F0AE3F50}|WebApplication5\\WebApplication5.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication5\\webapplication5\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{921B4F2C-CB1B-4B0E-A5D3-E9D3F0AE3F50}|WebApplication5\\WebApplication5.csproj|solutionrelative:webapplication5\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{921B4F2C-CB1B-4B0E-A5D3-E9D3F0AE3F50}|WebApplication5\\WebApplication5.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication5\\webapplication5\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{921B4F2C-CB1B-4B0E-A5D3-E9D3F0AE3F50}|WebApplication5\\WebApplication5.csproj|solutionrelative:webapplication5\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{921B4F2C-CB1B-4B0E-A5D3-E9D3F0AE3F50}|WebApplication5\\WebApplication5.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication5\\webapplication5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{921B4F2C-CB1B-4B0E-A5D3-E9D3F0AE3F50}|WebApplication5\\WebApplication5.csproj|solutionrelative:webapplication5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{921B4F2C-CB1B-4B0E-A5D3-E9D3F0AE3F50}|WebApplication5\\WebApplication5.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication5\\webapplication5\\peselvalidationattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{921B4F2C-CB1B-4B0E-A5D3-E9D3F0AE3F50}|WebApplication5\\WebApplication5.csproj|solutionrelative:webapplication5\\peselvalidationattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{921B4F2C-CB1B-4B0E-A5D3-E9D3F0AE3F50}|WebApplication5\\WebApplication5.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication5\\webapplication5\\onlylatinpolishletterswhitesignsanddigitsattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{921B4F2C-CB1B-4B0E-A5D3-E9D3F0AE3F50}|WebApplication5\\WebApplication5.csproj|solutionrelative:webapplication5\\onlylatinpolishletterswhitesignsanddigitsattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{921B4F2C-CB1B-4B0E-A5D3-E9D3F0AE3F50}|WebApplication5\\WebApplication5.csproj|c:\\users\\hanna\\desktop\\aspnet\\l6\\webapplication5\\webapplication5\\views\\shared\\anotherlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{921B4F2C-CB1B-4B0E-A5D3-E9D3F0AE3F50}|WebApplication5\\WebApplication5.csproj|solutionrelative:webapplication5\\views\\shared\\anotherlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OnlyLatinPolishLettersWhiteSignsAndDigitsAttribute.cs",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\WebApplication5\\OnlyLatinPolishLettersWhiteSignsAndDigitsAttribute.cs",
+              "RelativeDocumentMoniker": "WebApplication5\\OnlyLatinPolishLettersWhiteSignsAndDigitsAttribute.cs",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\WebApplication5\\OnlyLatinPolishLettersWhiteSignsAndDigitsAttribute.cs",
+              "RelativeToolTip": "WebApplication5\\OnlyLatinPolishLettersWhiteSignsAndDigitsAttribute.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T19:14:00.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PeselValidationAttribute.cs",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\WebApplication5\\PeselValidationAttribute.cs",
+              "RelativeDocumentMoniker": "WebApplication5\\PeselValidationAttribute.cs",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\WebApplication5\\PeselValidationAttribute.cs",
+              "RelativeToolTip": "WebApplication5\\PeselValidationAttribute.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T18:19:03.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AnotherLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\WebApplication5\\Views\\Shared\\AnotherLayout.cshtml",
+              "RelativeDocumentMoniker": "WebApplication5\\Views\\Shared\\AnotherLayout.cshtml",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\WebApplication5\\Views\\Shared\\AnotherLayout.cshtml",
+              "RelativeToolTip": "WebApplication5\\Views\\Shared\\AnotherLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T18:13:21.752Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\WebApplication5\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication5\\Program.cs",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\WebApplication5\\Program.cs",
+              "RelativeToolTip": "WebApplication5\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T18:12:14.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\WebApplication5\\Views\\Login\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication5\\Views\\Login\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\WebApplication5\\Views\\Login\\Index.cshtml",
+              "RelativeToolTip": "WebApplication5\\Views\\Login\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T18:12:08.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\WebApplication5\\Views\\Login\\Login.cshtml",
+              "RelativeDocumentMoniker": "WebApplication5\\Views\\Login\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\WebApplication5\\Views\\Login\\Login.cshtml",
+              "RelativeToolTip": "WebApplication5\\Views\\Login\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-08T18:11:51.391Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\WebApplication5\\Models\\LoginModel.cs",
+              "RelativeDocumentMoniker": "WebApplication5\\Models\\LoginModel.cs",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\WebApplication5\\Models\\LoginModel.cs",
+              "RelativeToolTip": "WebApplication5\\Models\\LoginModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T18:09:16.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\WebApplication5\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "WebApplication5\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\Hanna\\Desktop\\ASPNET\\L6\\WebApplication5\\WebApplication5\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "WebApplication5\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T18:08:31.881Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

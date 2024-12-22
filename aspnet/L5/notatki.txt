@@ -1,0 +1,13 @@
+[Authorize] może mieć parametry - np. lista uzytkownikow
+
+w kontrolerze mamy akcje
+
+wiązanie -> 55 minuta
+FormCollection - typ zlozony
+
+1:14
+
+
+Małgorzata Minorczyk
+
+malgorzata.minorczyk@gds.ey.com

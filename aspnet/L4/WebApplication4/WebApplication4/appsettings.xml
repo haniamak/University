@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Aby uzyskać więcej informacji o sposobie konfigurowania aplikacji ASP.NET, odwiedź stronę
+  https://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+	<foo3>bar3</foo3>
+	<foo4>
+		<bar4>
+			4
+		</bar4>
+	</foo4>
+</configuration>

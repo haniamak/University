@@ -1,0 +1,24 @@
+﻿@model WebApplication5.Models.StudentModel
+
+<h1>Dodaj Studenta</h1>
+
+<form asp-action="Create">
+    <div>
+        <label asp-for="Indeks"></label>
+        <input asp-for="Indeks" />
+    </div>
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label asp-for="Surname"></label>
+        <input asp-for="Surname" />
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+    </div>
+    <input type="submit" value="Dodaj" />
+</form>
+<a asp-action="Index">Powrót</a>

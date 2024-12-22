@@ -1,0 +1,7 @@
+C:\Users\Hanna\Desktop\ASPNET\L6\WebApplication1core\WebApplication1core\obj\Release\net8.0\PubTmp\Out\WebApplication1core.exe
+C:\Users\Hanna\Desktop\ASPNET\L6\WebApplication1core\WebApplication1core\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Users\Hanna\Desktop\ASPNET\L6\WebApplication1core\WebApplication1core\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\Hanna\Desktop\ASPNET\L6\WebApplication1core\WebApplication1core\obj\Release\net8.0\PubTmp\Out\WebApplication1core.dll
+C:\Users\Hanna\Desktop\ASPNET\L6\WebApplication1core\WebApplication1core\obj\Release\net8.0\PubTmp\Out\WebApplication1core.deps.json
+C:\Users\Hanna\Desktop\ASPNET\L6\WebApplication1core\WebApplication1core\obj\Release\net8.0\PubTmp\Out\WebApplication1core.runtimeconfig.json
+C:\Users\Hanna\Desktop\ASPNET\L6\WebApplication1core\WebApplication1core\obj\Release\net8.0\PubTmp\Out\WebApplication1core.pdb

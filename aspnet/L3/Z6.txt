@@ -1,0 +1,7 @@
+Plik app_offline.htm jest używany w kontekście aplikacji webowych opartych na technologii ASP.NET, a jego głównym zadaniem jest umożliwienie bezpiecznego przeniesienia aplikacji w tryb offline, na przykład podczas konserwacji lub wdrażania aktualizacji. Kiedy plik app_offline.htm zostaje umieszczony w głównym katalogu aplikacji, serwer internetowy (IIS – Internet Information Services) automatycznie przekierowuje wszystkich użytkowników do tej strony i przestaje obsługiwać normalne żądania do aplikacji.
+
+Główne zastosowania pliku app_offline.htm:
+Bezpieczne wyłączenie aplikacji – Umożliwia tymczasowe wyłączenie aplikacji i poinformowanie użytkowników o trwających pracach serwisowych, dzięki czemu nie napotkają błędów związanych z przerwaniem działania aplikacji.
+Aktualizacja aplikacji – Podczas wdrażania nowej wersji aplikacji, plik ten może być użyty do chwilowego wstrzymania działania aplikacji, co pozwala uniknąć problemów, które mogą się pojawić, gdy aplikacja jest jednocześnie używana przez użytkowników.
+Własna strona komunikatu – Zawartość pliku może być dostosowana, aby zawierała dowolną wiadomość lub informację dla użytkowników, na przykład komunikat o przewidywanym czasie zakończenia prac konserwacyjnych.
+Po zakończeniu aktualizacji lub prac konserwacyjnych plik app_offline.htm jest usuwany z katalogu aplikacji, a normalne działanie aplikacji zostaje automatycznie przywrócone.

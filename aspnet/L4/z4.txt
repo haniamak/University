@@ -1,0 +1,24 @@
+Endpoint 2: /section (dostęp przez IConfiguration i GetSection)
+csharp
+Skopiuj kod
+app.MapGet("/section", (IConfiguration config) =>
+{
+    var settings = config.GetSection("AppSettings").Get<AppSettingsConfig>();
+    return $"Settings: {string.Join(", ", settings.Settings.Select(s => $"{s.Key}={s.Value}"))}";
+});
+GetSection: Pobiera sekcję AppSettings z konfiguracji.
+Get<T>: Mapuje sekcję na obiekt typu AppSettingsConfig.
+Dane są odczytywane w postaci tablicy KeyValueConfig i łączone w ciąg znaków.
+
+
+Endpoint 3: /options (dostęp przez wzorzec IOptions)
+csharp
+Skopiuj kod
+app.MapGet("/options", (IOptions<AppSettingsConfig> options) =>
+{
+    var settings = options.Value.Settings;
+    return $"Settings (via IOptions): {string.Join(", ", settings.Select(s => $"{s.Key}={s.Value}"))}";
+});
+IOptions<T>: Oferuje prostszy sposób dostępu do skonfigurowanego obiektu, który został wcześniej zarejestrowany w kontenerze DI.
+options.Value: Zwraca instancję obiektu AppSettingsConfig.
+Dane z sekcji AppSettings są zwracane jako tablica obiektów KeyValueConfig.
