@@ -1,0 +1,103 @@
+body {
+  background-color: lightblue;
+  color: darkblue;
+  font-family: "Rubik", sans-serif;
+}
+
+html body {
+  font-size: 1rem;
+}
+
+body h1 {
+  font-weight: 800;
+  text-align: center;
+}
+
+body p {
+  margin: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+
+#challenge2 .box:nth-of-type(1) {
+  background-color: lightgreen;
+  border-radius: 50%;
+}
+
+#challenge2 .box:nth-of-type(1):hover {
+  background-color: lightpink;
+}
+
+#challenge2 .box:nth-of-type(2) {
+  background-color: lightslategray;
+  border: 10px solid black;
+  box-sizing: border-box;
+  
+}
+
+#challenge2 .box:nth-of-type(2):hover {
+  background-color: black;
+  border-color: lightslategray;
+}
+
+#challenge2 .box:nth-of-type(3) {
+  background: linear-gradient(to bottom, white 50%, red 50%);
+}
+
+#challenge2 .box:nth-of-type(3):hover {
+  background: linear-gradient(to bottom, red 50%, white 50%);
+}
+
+body a#link1,
+body a#link2,
+body a#link3 {
+  color: darkblue;
+  text-decoration: underline;
+}
+
+body a#link1:visited,
+body a#link2:visited,
+body a#link3:visited {
+  color: lightslategray;
+}
+
+body a#link1:hover,
+body a#link2:hover,
+body a#link3:hover {
+  color: red;
+  font-weight: bold;
+}
+
+#challenge3 ul {
+  list-style: none;
+
+}
+
+/*mozna bylo uzyc marker, on jest typowy dla list, before ma kazdy element nie tylko listy*/
+#challenge3 li::before {
+  content: "🍔 ";
+}
+
+#challenge4 p:empty {
+  display: none;
+}
+
+#challenge4 input[disabled] {
+  display: none;
+}
+
+#challenge4 a[href*="recipe"] {
+  display: none;
+}
+
+#challenge5 img {
+  width: 70%;
+  min-width: 100px;
+  max-width: 500px;
+  display: block;
+}
+
+#challenge5 figcaption {
+  font-size: 0.7rem;
+}
