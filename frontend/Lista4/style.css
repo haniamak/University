@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-size: small;
+}
+
+/* czcionki */
+/* html {
+  font-size: clamp(1rem, 1rem + 0.5vw, 1.25rem);
+}
+
+body {
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 1.5rem + 1vw, 2.5rem);
+}
+
+.container header {
+  font-size: clamp(1.25rem, 1.25rem + 0.75vw, 2rem);
+}
+
+input,
+select,
+textarea,
+button {
+  font-size: 1em;
+} */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f1f1f1;
+  padding: 20px;
+}
+
+.container {
+  position: relative;
+  max-width: 700px;
+  min-width: min(100%, max(300px, 20rem)); /* Minimalna szerokość zależna od rem */
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: auto; /* Dodaje scrolla*/
+}
+
+.container header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.container .form {
+  margin-top: 20px;
+}
+
+.names {
+  display: flex;
+  column-gap: 10px;
+  flex-grow: 0;
+  flex: 1;
+}
+
+.name {
+  width: 50%;
+}
+
+@media (max-width: 600px) {
+  .names {
+    flex-direction: column;
+    row-gap: 0;
+  }
+
+  .name {
+    width: 100%;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="submit"],
+select,
+textarea
+{ 
+  height: 50px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 1rem;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  background: pink;
+}
+
+input[type="submit"]:hover {
+  background: purple;
+  color: white;
+}
+
+input:required:invalid,
+select:required:invalid,
+textarea:required:invalid {
+  border-color: #ff4444;
+}
+
+.form .names {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  column-gap: 10px;
+}
+
+.message textarea {
+  resize: none;
+}
+
+/*wiekszy checkbox dodatkowo w html dodanie mozliwosci klikania w etykiete
+9. iii Wielkość checkboxa powinna być również zależna od wielkości czcionki użytkownika. */
+input[type="checkbox"] {
+  width: 1.2em; /* Zależne od rozmiaru czcionki rodzica */
+  height: 1.2em;
+  min-width: 16px; /* Absolutne minimum */
+  min-height: 16px;
+}
+
+@media (pointer: coarse) {
+  input[type="checkbox"] {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}

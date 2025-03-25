@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Contact Form</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Contact Form">
+    <meta name="keywords" content="contact, form, email">
+    <meta name="author" content="Hanna Makowska">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <section class="container">
+      <header>Contact Form</header>
+      <div class="forms">
+        <div class="contact-form">
+          <form>
+            <div class="names">
+              <div class="name">
+                <label for="name">First Name*</label>
+                <input type="text" id="first-name" name="first-name" required>
+              </div>
+              <div class="name">
+                <label for="name">Last Name</label>
+                <input type="text" id="last-name" name="last-name">
+              </div>
+            </div>
+            <div class="email">
+              <label for="email">Email*</label>
+              <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+            </div>
+            <div class="phone">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" pattern="[0-9]{9}">
+            </div>
+            <div class="subscribe">
+              <label style="display: flex; align-items: center; gap: 8px;">
+                <input type="checkbox" name="subscribe" required>
+                <span>Subscribe to newsletter</span>
+              </label>
+            </div>
+            <div class="contact">
+              <label for="reason">Reason for contact*</label>
+              <select name="reason" id="reason" required>
+                <option value="" selected disabled hidden>Select an option</option>
+                <option value="question">Question</option>
+                <option value="feedback">Feedback</option>
+                <option value="complaint">Complaint</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="message">
+              <label for="message">Message*</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
