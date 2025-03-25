@@ -9,16 +9,12 @@
 }
 
 /* czcionki */
-/* html {
+html {
   font-size: clamp(1rem, 1rem + 0.5vw, 1.25rem);
 }
 
 body {
   font-size: 1rem;
-}
-
-h1 {
-  font-size: clamp(1.5rem, 1.5rem + 1vw, 2.5rem);
 }
 
 .container header {
@@ -30,7 +26,7 @@ select,
 textarea,
 button {
   font-size: 1em;
-} */
+}
 
 body {
   min-height: 100vh;
@@ -75,7 +71,7 @@ body {
   width: 50%;
 }
 
-@media (max-width: 600px) {
+@media screen and (width < 600px) {
   .names {
     flex-direction: column;
     row-gap: 0;
@@ -101,7 +97,6 @@ textarea
   margin-top: 5px;
   margin-bottom: 20px;
   padding: 15px;
-  font-size: 1rem;
 }
 
 input[type="submit"] {
@@ -142,7 +137,13 @@ input[type="checkbox"] {
 
 @media (pointer: coarse) {
   input[type="checkbox"] {
-    width: 1.5em;
-    height: 1.5em;
+    width: 30px;
+    height: 30px;
+    border-width: 2px;
   }
+}
+
+.subscribe {
+  width: fit-content;
+  margin-bottom: 20px;
 }
