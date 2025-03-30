@@ -5,35 +5,19 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  font-size: small;
 }
 
-/* czcionki */
 html {
-  font-size: clamp(1rem, 1rem + 0.5vw, 1.25rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
-body {
-  font-size: 1rem;
-}
-
-.container header {
-  font-size: clamp(1.25rem, 1.25rem + 0.75vw, 2rem);
-}
-
-input,
-select,
-textarea,
-button {
-  font-size: 1em;
-}
 
 body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f1f1f1;
+  background: #e3d9d9;
   padding: 20px;
 }
 
@@ -50,7 +34,6 @@ body {
 }
 
 .container header {
-  font-size: 1.5rem;
   font-weight: 600;
   color: #333;
   text-align: center;
@@ -129,21 +112,23 @@ textarea:required:invalid {
 /*wiekszy checkbox dodatkowo w html dodanie mozliwosci klikania w etykiete
 9. iii Wielkość checkboxa powinna być również zależna od wielkości czcionki użytkownika. */
 input[type="checkbox"] {
-  width: 1.2em; /* Zależne od rozmiaru czcionki rodzica */
-  height: 1.2em;
+  width: 1.5em; /* Zależne od rozmiaru czcionki rodzica */
+  height: 1.5em;
   min-width: 16px; /* Absolutne minimum */
   min-height: 16px;
 }
 
 @media (pointer: coarse) {
   input[type="checkbox"] {
-    width: 30px;
-    height: 30px;
-    border-width: 2px;
+    transform: scale(2); /* Dla urządzeń dotykowych zwiększamy */
+  }
+  .subscribe {
+    margin-left: 8px;
   }
 }
 
 .subscribe {
   width: fit-content;
   margin-bottom: 20px;
+
 }
