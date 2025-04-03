@@ -1,5 +1,3 @@
-// od 9 niezrobione
-
 /**
  * @typedef {Object} Product
  * @property {number} id - Id produktu
@@ -22,7 +20,6 @@ function* idGenerator() {
     yield id++;
   }
 }
-const idGen = idGenerator();
 
 /**
  * Dodaje produkt do listy zakupów.
@@ -35,7 +32,7 @@ const idGen = idGenerator();
  */
 function addProduct(name, quantity, purchaseBy, isPurchased, pricePerUnit) {
     let product = {
-      id: idGen.next().value,
+      id: idGenerator().next().value,
       name,
       quantity,
       purchaseBy: new Date(purchaseBy),
@@ -85,11 +82,14 @@ function editName(id, newName) {
  */
 function editIsPurchased(id, isPurchased) {
   const product = products.find(product => product.id === id);
-  if (product) {
-    product.isPurchased = isPurchased;
-    return true;
+  if (!product) {
+    return false;
   }
-  return false;
+  product.isPurchased = isPurchased;
+  if (!isPurchased && product.pricePerUnit !== undefined) {
+    delete product.pricePerUnit;
+  }
+  return true;
 }
 
 /**
@@ -154,8 +154,52 @@ function buyToday() {
   return productsToBuy;
 }
 
+/**
+ * Oblicza całkowity koszt produktów do kupienia w danym dniu.
+ * @param {string} dateString - Data w formacie YYYY-MM-DD
+ * @returns {number|null} Całkowity koszt lub null, jeśli nie ma żadnych produktów do kupienia
+ * */
+function calculateDailyCost(dateString) {
+  const targetDate = new Date(dateString);
+  targetDate.setHours(0, 0, 0, 0);
 
-addProduct("Mleko", 2, "2025-03-31", false);
+  const targetTime = targetDate.getTime();
+
+  let totalCost = 0;
+  let hasAnyPrice = false;
+
+  products.forEach(product => {
+    const productDate = new Date(product.purchaseBy);
+    productDate.setHours(0, 0, 0, 0);
+
+    if (productDate.getTime() === targetTime && product.isPurchased) {
+      if (typeof product.pricePerUnit === 'number' && product.quantity > 0) {
+        totalCost += product.pricePerUnit * product.quantity;
+        hasAnyPrice = true;
+      }
+    }
+  });
+
+  return hasAnyPrice ? totalCost : null;
+}
+
+/**
+ * Funkcja modyfikująca produkty na podstawie ich id.
+ * @param {number[]} ids - Tablica id produktów do modyfikacji
+ * @param {function} modifyFunction - Funkcja modyfikująca produkty
+ * @returns {void}
+ * */
+function modifyProducts(ids, modifyFunction) {
+
+  products.forEach(product => {
+    if (ids.includes(product.id)) {
+      modifyFunction(product);
+    }
+  });
+
+}
+
+addProduct("Mleko", 2, "2025-03-31", true, 5.99);
 addProduct("Chleb", 1, "2025-03-31", false);
 addProduct("Masło", 1, "2025-03-31", true, 12.99);
 addProduct("Ser", 1, "2025-03-30", false, 12.99);
@@ -173,3 +217,9 @@ addProduct("Ser", 1, "2025-03-30", false, 12.99);
 //console.log(listUp(2));
 // console.log(buyToday());
 //console.log(products);
+//console.log(calculateDailyCost("2025-03-31"));
+modifyProducts([1, 3], (product) => {
+  product.pricePerUnit *= 0.9;
+});
+
+console.log(products);
