@@ -170,6 +170,21 @@ console.log("Should be False:", compareObjects(obj5, obj1));
 let library = [];
 
 const addBookToLibrary = (title, author, pages, isAvailable, ratings) => {
+  if (typeof title !== "string" || title.trim() === "") {
+    throw new Error("Title must be a non-empty string");
+  }
+  if (typeof author !== "string" || author.trim() === "") {
+    throw new Error("Title must be a non-empty string");
+  }
+  if (typeof pages !== "number" || pages <= 0 || !Number.isInteger(pages)) {
+    throw new Error("Pages must be a positive integer number");
+  }
+  if (typeof isAvailable !== "boolean") {
+    throw new Error("isAvailable must be a boolean value");
+  }
+  if (!Array.isArray(ratings) || !ratings.every(r => typeof r === "number" && r >= 0 && r <= 5)) {
+    throw new Error("Ratings must be an array of numbers between 0 and 5");
+  }
   library.push({
     title,
     author,
@@ -178,3 +193,15 @@ const addBookToLibrary = (title, author, pages, isAvailable, ratings) => {
     ratings,
   });
 };
+
+addBookToLibrary("Harry Potter", "J.K. Rowling", 500, true, []); // poprawny rekord (tablica ratingow moze byc pusta)
+//addBookToLibrary("  ", "J.K. Rowling", 500, true, []);
+//addBookToLibrary(5, "J.K. Rowling", 500, true, []);
+//addBookToLibrary("Harry Potter", "  ", 500, true, []);
+//addBookToLibrary("Harry Potter", 5, 500, true, []);
+//addBookToLibrary("Harry Potter", "J.K. Rowling", -5, true, []);
+//addBookToLibrary("Harry Potter", "J.K. Rowling", 5.6, true, []);
+//addBookToLibrary("Harry Potter", "J.K. Rowling", "five", true, [1, 2, 3]);
+//addBookToLibrary("Harry Potter", "J.K. Rowling", 500, "true", []);
+//addBookToLibrary("Harry Potter", "J.K. Rowling", 500, true, [1, 2, 3, 6]);
+//addBookToLibrary("Harry Potter", "J.K. Rowling", 500, true, [1, 2, 3, "six"]);
