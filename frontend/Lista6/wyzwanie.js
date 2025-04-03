@@ -205,3 +205,100 @@ addBookToLibrary("Harry Potter", "J.K. Rowling", 500, true, []); // poprawny rek
 //addBookToLibrary("Harry Potter", "J.K. Rowling", 500, "true", []);
 //addBookToLibrary("Harry Potter", "J.K. Rowling", 500, true, [1, 2, 3, 6]);
 //addBookToLibrary("Harry Potter", "J.K. Rowling", 500, true, [1, 2, 3, "six"]);
+
+// ------------------------------------------------------------------
+
+// WYZWANIE 6
+
+function testAddingBooks(testCases) {
+  testCases.forEach((test, index) => {
+    const { testCase, shouldFail } = test;
+    let errorOccurred = false;
+    let errorMessage = '';
+
+    try {
+      addBookToLibrary(...testCase);
+    } catch (error) {
+      errorOccurred = true;
+      errorMessage = error.message;
+    }
+
+    const testPassed = (errorOccurred && shouldFail) || (!errorOccurred && !shouldFail);
+
+    console.log(`Test ${index + 1}:`);
+    console.log(`Case: ${JSON.stringify(testCase)}`);
+
+    if (errorOccurred) {
+      console.log(`Error: ${errorMessage}`);
+    }
+
+    if (testPassed) {
+      console.log('Result: Test passed');
+    } else {
+      console.log('Result: Test failed');
+    }
+
+    console.log('---------------------');
+  });
+}
+
+const testCases = [
+  { testCase: ["", "Author", 200, true, []], shouldFail: true },
+  { testCase: ["Title", "", 200, true, []], shouldFail: true },
+  { testCase: ["Title", "Author", -1, true, []], shouldFail: true },
+  { testCase: ["Title", "Author", 200, "yes", []], shouldFail: true },
+  { testCase: ["Title", "Author", 200, true, [1, 2, 3, 6]], shouldFail: true },
+  {
+    testCase: ["Title", "Author", 200, true, [1, 2, 3, "yes"]],
+    shouldFail: true,
+  },
+  { testCase: ["Title", "Author", 200, true, [1, 2, 3, {}]], shouldFail: true },
+  { testCase: ["Title", "Author", 200, true, []], shouldFail: false },
+  { testCase: ["Title", "Author", 200, true, [1, 2, 3]], shouldFail: false },
+  { testCase: ["Title", "Author", 200, true, [1, 2, 3, 4]], shouldFail: false },
+  {
+    testCase: ["Title", "Author", 200, true, [1, 2, 3, 4, 5]],
+    shouldFail: false,
+  },
+  {
+    testCase: ["Title", "Author", 200, true, [1, 2, 3, 4, 5]],
+    shouldFail: false,
+  },
+  {
+    testCase: ["Harry Potter", "J.K. Rowling", 500, true, []],
+    shouldFail: true
+  },
+  { testCase: [" ", "J.K. Rowling", 500, true, []], shouldFail: false},
+];
+
+testAddingBooks(testCases);
+
+// ------------------------------------------------------------------
+
+// WYZWANIE 7
+
+function addBooksToLibrary(books) {
+  books.forEach((book) => {
+    try {
+      addBookToLibrary(...book);
+    } catch (error) {
+      console.error(`Error adding book: ${error.message}`);
+    }
+  });
+}
+
+const books = [
+  ["Alice in Wonderland", "Lewis Carroll", 200, true, [1, 2, 3]],
+  ["1984", "George Orwell", 300, true, [4, 5]],
+  ["The Great Gatsby", "F. Scott Fitzgerald", 150, true, [3, 4]],
+  ["To Kill a Mockingbird", "Harper Lee", 250, true, [2, 3]],
+  ["The Catcher in the Rye", "J.D. Salinger", 200, true, [1, 2]],
+  ["The Hobbit", "J.R.R. Tolkien", 300, true, [4, 5]],
+  ["Fahrenheit 451", "Ray Bradbury", 200, true, [3, 4]],
+  ["Brave New World", "Aldous Huxley", 250, true, [2, 3]],
+  ["The Alchemist", "Paulo Coelho", 200, true, [1, 2]],
+  ["The Picture of Dorian Gray", "Oscar Wilde", 300, true, [4, 5]],
+];
+
+addBooksToLibrary(books);
+console.log(library);
