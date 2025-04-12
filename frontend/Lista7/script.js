@@ -21,7 +21,7 @@ const clearAllButton = document.getElementById("todos-clear");
 function render() {
   list.innerHTML = "";
 
-  todos.forEach((todo, index) => {
+  todos.forEach((todo) => {
     const li = document.createElement("li");
     li.className = "todo__container";
     if (todo.completed) {
@@ -29,18 +29,18 @@ function render() {
     }
     li.innerHTML = `
       <div class="todo-element todo-name">${todo.name}</div>
-      <button class="todo-element todo-button move-up" data-index="${index}">↑</button>
-      <button class="todo-element todo-button move-down" data-index="${index}">↓</button>
-      <button class="todo-element todo-button complete-btn" data-index="${index}">
+      <button class="todo-element todo-button move-up">↑</button>
+      <button class="todo-element todo-button move-down">↓</button>
+      <button class="todo-element todo-button">
         ${todo.completed ? "Revert" : "Done"}
       </button>
-      <button class="todo-element todo-button remove-btn" data-index="${index}">Remove</button>`;
-
+      <button class="todo-element todo-button">Remove</button>`;
     list.appendChild(li);
   });
 
   updateCount();
 }
+
 
 function updateCount() {
   const remaining = todos.filter((t) => !t.completed).length;
@@ -68,7 +68,24 @@ clearAllButton.addEventListener("click", function (event) {
   render();
 });
 
-
-
+list.addEventListener("click", function (event) {
+  event.preventDefault();
+  const name = event.target.innerHTML.trim().toLowerCase();
+  const index = Array.from(list.children).indexOf(event.target.closest("li"));
+  if (event.target.classList.contains("move-up") && index > 0) {
+    [todos[index - 1], todos[index]] = [todos[index], todos[index - 1]];
+    render();
+  } else if (event.target.classList.contains("move-down") && index < todos.length - 1) {
+    [todos[index + 1], todos[index]] = [todos[index], todos[index + 1]];
+    render();
+  } else if (name === "remove") {
+    todos.splice(index, 1);
+    render();
+  }
+  else if (name === "done" || name === "revert") {
+    todos[index].completed = !todos[index].completed;
+    render();
+  }
+});
 
 render();
