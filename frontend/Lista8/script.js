@@ -12,7 +12,6 @@ const loading = document.getElementById("loading");
 pokemonListElement.innerHTML = "";
 pokemonDetailsElement.style.display = "none";
 
-
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
@@ -49,49 +48,62 @@ async function loadPokemon(pokemonName) {
   loading.style.display = "block";
   pokemonDetailsElement.style.display = "none";
   try {
-    const url = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-    const pokemonData = await url.json();
+    const species = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonName}`);
+    const speciesData = await species.json();
 
+    const defaultVariety = speciesData.varieties.find(v => v.is_default);
+    if (!defaultVariety) {
+      throw new Error("No default variety found");
+    }
+
+    const pokemonUrl = defaultVariety.pokemon.url;
+
+    // Krok 3: Pobierz dane z pokemon
+    const pokemonRes = await fetch(pokemonUrl);
+    const pokemonData = await pokemonRes.json();
+
+    // Nazwa
     pokemonNameElement.textContent = capitalize(pokemonData.name);
-    console.log(pokemonData);
 
+    // Obrazek
     const spriteUrl = pokemonData.sprites.front_default;
     const preloadedImg = await preloadImage(spriteUrl);
-    pokemonImageElement.src = pokemonData.sprites.front_default;
+    pokemonImageElement.src = spriteUrl;
     pokemonImageElement.alt = pokemonData.name;
     pokemonImageElement.style.display = "block";
 
+    // Typy
     pokemonTypeElement.innerHTML = "";
     pokemonData.types.forEach(type => {
-      const typeSpan = document.createElement("span");
-      typeSpan.className = "type";
-      typeSpan.textContent = capitalize(type.type.name);
-      pokemonTypeElement.appendChild(typeSpan);
+      const span = document.createElement("span");
+      span.className = "type";
+      span.textContent = capitalize(type.type.name);
+      pokemonTypeElement.appendChild(span);
     });
 
+    // Statystyki
     pokemonStatsElement.innerHTML = "";
     pokemonData.stats.forEach(stat => {
       const statDiv = document.createElement("div");
       statDiv.className = "stat";
 
-      const statName = document.createElement("span");
-      statName.textContent = capitalize(stat.stat.name);
+      const nameSpan = document.createElement("span");
+      nameSpan.textContent = capitalize(stat.stat.name);
 
-      const statValue = document.createElement("span");
-      statValue.textContent = stat.base_stat;
+      const valueSpan = document.createElement("span");
+      valueSpan.textContent = stat.base_stat;
 
-      statDiv.appendChild(statName);
-      statDiv.appendChild(statValue);
+      statDiv.appendChild(nameSpan);
+      statDiv.appendChild(valueSpan);
       pokemonStatsElement.appendChild(statDiv);
     });
 
-    const flavorTextRes = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonName}`);
-    const flavorTextData = await flavorTextRes.json();
-    const flavorText = flavorTextData.flavor_text_entries.find(entry => entry.language.name === "en");
+    // Opis (flavor text)
+    const flavorText = speciesData.flavor_text_entries.find(entry => entry.language.name === "en");
     pokemonFlavorTextElement.textContent = flavorText ? flavorText.flavor_text.replace(/[\n\f]/g, " ") : "No flavor text available.";
     pokemonFlavorTextElement.style.display = "block";
+    // Pokaż dane
     pokemonDetailsElement.style.display = "flex";
-
   }
   catch (err) {
     console.error("Error loading Pokémon details:", err);
