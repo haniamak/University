@@ -42,7 +42,7 @@ async function fetchPokemonList() {
   } finally {
     loading.style.display = "none";
   }
-} 
+}
 
 async function loadPokemon(pokemonName) {
   loading.style.display = "block";
@@ -58,52 +58,10 @@ async function loadPokemon(pokemonName) {
 
     const pokemonUrl = defaultVariety.pokemon.url;
 
-    // Krok 3: Pobierz dane z pokemon
     const pokemonRes = await fetch(pokemonUrl);
     const pokemonData = await pokemonRes.json();
 
-    // Nazwa
-    pokemonNameElement.textContent = capitalize(pokemonData.name);
-
-    // Obrazek
-    const spriteUrl = pokemonData.sprites.front_default;
-    const preloadedImg = await preloadImage(spriteUrl);
-    pokemonImageElement.src = spriteUrl;
-    pokemonImageElement.alt = pokemonData.name;
-    pokemonImageElement.style.display = "block";
-
-    // Typy
-    pokemonTypeElement.innerHTML = "";
-    pokemonData.types.forEach(type => {
-      const span = document.createElement("span");
-      span.className = "type";
-      span.textContent = capitalize(type.type.name);
-      pokemonTypeElement.appendChild(span);
-    });
-
-    // Statystyki
-    pokemonStatsElement.innerHTML = "";
-    pokemonData.stats.forEach(stat => {
-      const statDiv = document.createElement("div");
-      statDiv.className = "stat";
-
-      const nameSpan = document.createElement("span");
-      nameSpan.textContent = capitalize(stat.stat.name);
-
-      const valueSpan = document.createElement("span");
-      valueSpan.textContent = stat.base_stat;
-
-      statDiv.appendChild(nameSpan);
-      statDiv.appendChild(valueSpan);
-      pokemonStatsElement.appendChild(statDiv);
-    });
-
-    // Opis (flavor text)
-    const flavorText = speciesData.flavor_text_entries.find(entry => entry.language.name === "en");
-    pokemonFlavorTextElement.textContent = flavorText ? flavorText.flavor_text.replace(/[\n\f]/g, " ") : "No flavor text available.";
-    pokemonFlavorTextElement.style.display = "block";
-    // Pokaż dane
-    pokemonDetailsElement.style.display = "flex";
+    await renderPokemonDetails(pokemonData, speciesData);
   }
   catch (err) {
     console.error("Error loading Pokémon details:", err);
@@ -112,6 +70,46 @@ async function loadPokemon(pokemonName) {
   finally {
     loading.style.display = "none";
   }
+}
+
+async function renderPokemonDetails(pokemonData, speciesData) {
+  pokemonNameElement.textContent = capitalize(pokemonData.name);
+
+  const spriteUrl = pokemonData.sprites.front_default;
+  await preloadImage(spriteUrl);
+  pokemonImageElement.src = spriteUrl;
+  pokemonImageElement.alt = pokemonData.name;
+  pokemonImageElement.style.display = "block";
+
+  pokemonTypeElement.innerHTML = "";
+  pokemonData.types.forEach(type => {
+    const span = document.createElement("span");
+    span.className = "type";
+    span.textContent = capitalize(type.type.name);
+    pokemonTypeElement.appendChild(span);
+  });
+
+  pokemonStatsElement.innerHTML = "";
+  pokemonData.stats.forEach(stat => {
+    const statDiv = document.createElement("div");
+    statDiv.className = "stat";
+
+    const nameSpan = document.createElement("span");
+    nameSpan.textContent = capitalize(stat.stat.name);
+
+    const valueSpan = document.createElement("span");
+    valueSpan.textContent = stat.base_stat;
+
+    statDiv.appendChild(nameSpan);
+    statDiv.appendChild(valueSpan);
+    pokemonStatsElement.appendChild(statDiv);
+  });
+
+  const flavorText = speciesData.flavor_text_entries.find(entry => entry.language.name === "en");
+  pokemonFlavorTextElement.textContent = flavorText ? flavorText.flavor_text.replace(/[\n\f]/g, " ") : "No flavor text available.";
+  pokemonFlavorTextElement.style.display = "block";
+
+  pokemonDetailsElement.style.display = "flex";
 }
 
 fetchPokemonList();
