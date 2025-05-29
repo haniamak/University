@@ -25,6 +25,7 @@ async function preloadImage(src) {
 
 async function fetchPokemonList() {
   loading.style.display = "block";
+  errorText.style.display = "none";
   pokemonListElement.innerHTML = "";
   try {
     const res = await fetch("https://pokeapi.co/api/v2/pokemon-species?limit=151");
@@ -73,13 +74,13 @@ async function loadPokemon(pokemonName) {
 }
 
 async function renderPokemonDetails(pokemonData, speciesData) {
-  pokemonNameElement.textContent = capitalize(pokemonData.name);
-
   const spriteUrl = pokemonData.sprites.front_default;
   await preloadImage(spriteUrl);
   pokemonImageElement.src = spriteUrl;
   pokemonImageElement.alt = pokemonData.name;
   pokemonImageElement.style.display = "block";
+
+  pokemonNameElement.textContent = capitalize(pokemonData.name);
 
   pokemonTypeElement.innerHTML = "";
   pokemonData.types.forEach(type => {
