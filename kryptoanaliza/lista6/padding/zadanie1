@@ -5,8 +5,10 @@ import rsa.pkcs15pad as pad
 from rsa.oracle import Oracle
 from sys import argv
 
-keyFile = 'bleichenbacher/RSAkey1'
-ciphertextFile = 'bleichenbacher/cipher1.txt'
+# keyFile = 'bleichenbacher/RSAkey1'
+# ciphertextFile = 'bleichenbacher/cipher1.txt'
+keyFile = 'bleichenbacher/RSAkey2'
+ciphertextFile = 'bleichenbacher/cipher2.txt'
 
 print("""All you need is the encryption key, the eavesdropped ciphertext,
 and the oracle. The oracle needs the private key, so in fact the key
@@ -16,7 +18,10 @@ part!""")
 key = rsa.read(keyFile)
 with open(ciphertextFile) as cf:
     ciphertext = int(cf.readline().strip())
-oracle = Oracle(key).simpleOracle
+#oracle = Oracle(key).simpleOracle
+oracleobj = Oracle(key)
+oracle = oracleobj.simpleOracle
+#oracle = oracleobj.oracle
 
 print('This is your key of size {} bits ({} bytes):'.format
          (key.keyBits, key.keyBytes))
@@ -80,6 +85,9 @@ def bleichenbacher_step2(s, M):
                 new_M.add((new_a, new_b))
     return new_M
 
+import time
+start = time.time()
+
 s0 = bleichenbacher_step1(s0)
 print('Found s =', s0)
 M0 = bleichenbacher_step2(s0, M0)
@@ -97,6 +105,16 @@ while True:
             EB = interval[0].to_bytes(key.keyBytes, byteorder='big')
             message = pad.dec(EB)
             print('Message:', message.decode('utf-8'))
+            end = time.time()
+            with open('bleichenbacher/bleichenbacher_out.txt', 'a') as out:
+                out.write('Key file: ' + keyFile + '\n')
+                out.write('Ciphertext file: ' + ciphertextFile + '\n')
+                out.write('Oracle used: ' + str(oracle) + '\n')
+                out.write('Message: ' + message.decode('utf-8') + '\n')
+                out.write('Time passed: {} seconds\n'.format(end - start))
+                out.write('Oracle calls: ' + str(oracleobj.count()) + '\n')
+                out.write('----------------------------------------\n')
+            
             break
         s0 = bleichenbacher_step1opt(s0, interval[0], interval[1])
         print('Found s0 (opt) =', s0)
@@ -107,3 +125,4 @@ while True:
     if not M0:
         print("ERROR: M0 is empty")
         break
+
