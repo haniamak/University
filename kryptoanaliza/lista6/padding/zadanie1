@@ -42,7 +42,7 @@ B = 2 **(8 * (key.keyBytes - 2))
 a0 = 2 * B
 b0 = 3 * B - 1
 
-s0 = ceil((key.n + a0), b0)
+s0 = ceil((key.n + a0), b0) # slajd 21
 M0 = set([(a0, b0)])
 
 print(M0)
@@ -56,13 +56,10 @@ def bleichenbacher_step1(lowerbound):
         s = s + 1
         # print('Trying s =', s)
 
-# s1 = s0
-# while True:
-#     s1 = bleichenbacher_step1(s1)
-#     print('Found s1 =', s1)
+
 
 def bleichenbacher_step1opt(s, a, b):
-    r = ceil(2 * (b * s - a0), key.n) # to 2 razy do zastanowienia
+    r = ceil(2 * (b * s - a0), key.n) # slajd 39
     while True:
         low_bound = ceil((a0 + r * key.n), b)
         high_bound = floor((b0 + r * key.n), a)
@@ -72,15 +69,17 @@ def bleichenbacher_step1opt(s, a, b):
                 return s
             
         r = r + 1
-        
+
+
+
 def bleichenbacher_step2(s, M):
     new_M = set()
     for (a, b) in M:
-        r_min = ceil((a * s - 3 * B + 1), key.n)
-        r_max = floor((b * s - 2 * B), key.n)
+        r_min = ceil((a * s - 3 * B + 1), key.n) # slajd 26
+        r_max = floor((b * s - 2 * B), key.n) # slajd 26
         for r in range(r_min, r_max + 1):
-            new_a = max(a, ceil(2 * B + r * key.n, s))
-            new_b = min(b, floor(3 * B - 1 + r * key.n, s))
+            new_a = max(a, ceil(2 * B + r * key.n, s)) # slajd 39
+            new_b = min(b, floor(3 * B - 1 + r * key.n, s)) # slajd 39
             if new_a <= new_b:
                 new_M.add((new_a, new_b))
     return new_M
