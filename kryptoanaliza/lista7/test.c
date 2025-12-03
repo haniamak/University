@@ -5,15 +5,17 @@
 
 void launch(struct Server *server)
 {
-  char buffer[30000];
+  char line[65536];
+  char reverse_line[65536];
+  // char buffer[65535];
 
-  char *hello =
-      "HTTP/1.1 200 OK\r\n"
-      "Content-Type: text/plain\r\n"
-      "Content-Length: 12\r\n"
-      "Connection: close\r\n"
-      "\r\n"
-      "Hello world";
+  // char *hello =
+  //     "HTTP/1.1 200 OK\r\n"
+  //     "Content-Type: text/plain\r\n"
+  //     "Content-Length: 12\r\n"
+  //     "Connection: close\r\n"
+  //     "\r\n"
+  //     "Hello world";
 
   while (1)
   {
@@ -28,15 +30,51 @@ void launch(struct Server *server)
       perror("Failed to accept connection");
       continue;
     }
-    int bytes = read(new_socket, buffer, sizeof(buffer) - 1);
-    if (bytes > 0)
-    {
-      buffer[bytes] = '\0';
-      printf("%s\n", buffer);
-    }
+    // int bytes = read(new_socket, buffer, sizeof(buffer) - 1);
+    // if (bytes > 0)
+    // {
+    //   buffer[bytes] = '\0';
+    //   printf("%s\n", buffer);
+    // }
 
-    write(new_socket, hello, strlen(hello));
-    close(new_socket);
+    // write(new_socket, hello, strlen(hello));
+    // close(new_socket);
+    int position = 0;
+    while (1)
+    {
+      char c;
+      int bytes = read(new_socket, &c, 1);
+
+      if (bytes <= 0) {
+        close(new_socket);
+        break;
+      }
+
+      line[position++] = c;
+
+      if (position >= 65535) {
+        position = 0; // ? mam kontynuowac wywalic blad czy co
+      }
+
+      if (position >= 2 && line[position - 2] == '\r' && line[position - 1] == '\n') {
+        if (position == 2) {
+          // empty line, end of request
+          close(new_socket);
+          break;
+        }
+
+        int len = position - 2;
+        for (int i = 0; i < len; i++) {
+          reverse_line[i] = line[len - 1 - i];
+        }
+        reverse_line[len] = '\r';
+        reverse_line[len + 1] = '\n';
+
+        send(new_socket, reverse_line, len + 2, 0);
+        position = 0;
+      }
+
+    }
   }
 }
 
