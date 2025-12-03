@@ -1,12 +1,9 @@
+#include "server.h"
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
-#include "server.h"
 
-void launch(struct Server *server)
-{
-  char line[65536];
-  char reverse_line[65536];
+void launch(struct Server *server) {
   // char buffer[65535];
 
   // char *hello =
@@ -17,16 +14,15 @@ void launch(struct Server *server)
   //     "\r\n"
   //     "Hello world";
 
-  while (1)
-  {
+  while (1) {
     printf("Waiting for connection...\n");
 
     struct sockaddr_in client_address;
     socklen_t client_len = sizeof(client_address);
 
-    int new_socket = accept(server->socket, (struct sockaddr *)&client_address, &client_len);
-    if (new_socket < 0)
-    {
+    int new_socket =
+        accept(server->socket, (struct sockaddr *)&client_address, &client_len);
+    if (new_socket < 0) {
       perror("Failed to accept connection");
       continue;
     }
@@ -40,23 +36,27 @@ void launch(struct Server *server)
     // write(new_socket, hello, strlen(hello));
     // close(new_socket);
     int position = 0;
-    while (1)
-    {
-      char c;
-      int bytes = read(new_socket, &c, 1);
+    while (1) {
+      char line[65535] = {0};
+      char reverse_line[65535] = {0};
+
+      ssize_t bytes = read(new_socket, &line, 65535);
 
       if (bytes <= 0) {
         close(new_socket);
         break;
       }
 
-      line[position++] = c;
+      position = bytes - 3;
 
-      if (position >= 65535) {
-        position = 0; // ? mam kontynuowac wywalic blad czy co
+      if (position < 0) {
+        close(new_socket);
+        break;
       }
+      // FIXME:) naprawić odwracanie
 
-      if (position >= 2 && line[position - 2] == '\r' && line[position - 1] == '\n') {
+      if (position >= 2 && line[position - 2] == '\r' &&
+          line[position - 1] == '\n') {
         if (position == 2) {
           // empty line, end of request
           close(new_socket);
@@ -73,12 +73,17 @@ void launch(struct Server *server)
         send(new_socket, reverse_line, len + 2, 0);
         position = 0;
       }
-
     }
   }
 }
 
 int main() {
-  struct Server server = server_constructor(AF_INET, SOCK_STREAM, 0, INADDR_ANY, 7777, 10, launch);
+  struct Server server =
+      server_constructor(AF_INET, SOCK_STREAM, 0, INADDR_ANY, 7777, 10, launch);
   server.launch(&server);
 }
+
+// by skompilowac: gcc test.c server.c
+// by odpalic: ./a.out
+
+// w drugim terminalu; printf "Ala ma kota\r\n" | nc localhost 7777
