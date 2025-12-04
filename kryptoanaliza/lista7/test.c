@@ -26,15 +26,7 @@ void launch(struct Server *server) {
       perror("Failed to accept connection");
       continue;
     }
-    // int bytes = read(new_socket, buffer, sizeof(buffer) - 1);
-    // if (bytes > 0)
-    // {
-    //   buffer[bytes] = '\0';
-    //   printf("%s\n", buffer);
-    // }
 
-    // write(new_socket, hello, strlen(hello));
-    // close(new_socket);
     int position = 0;
     while (1) {
       char line[65535] = {0};
@@ -47,7 +39,7 @@ void launch(struct Server *server) {
         break;
       }
 
-      position = bytes - 3;
+      position = bytes - 2;
 
       if (position < 0) {
         close(new_socket);
@@ -55,24 +47,21 @@ void launch(struct Server *server) {
       }
       // FIXME:) naprawić odwracanie
 
-      if (position >= 2 && line[position - 2] == '\r' &&
-          line[position - 1] == '\n') {
-        if (position == 2) {
-          // empty line, end of request
-          close(new_socket);
-          break;
-        }
-
-        int len = position - 2;
-        for (int i = 0; i < len; i++) {
-          reverse_line[i] = line[len - 1 - i];
-        }
-        reverse_line[len] = '\r';
-        reverse_line[len + 1] = '\n';
-
-        send(new_socket, reverse_line, len + 2, 0);
-        position = 0;
+      if (position == 2) {
+        // empty line, end of request
+        close(new_socket);
+        break;
       }
+
+      int len = position;
+      for (int i = 0; i <= len; i++) {
+        reverse_line[i] = line[len - i];
+      }
+      reverse_line[len + 1] = '\r';
+      reverse_line[len + 2] = '\n';
+
+      send(new_socket, reverse_line, len + 3, 0);
+      position = 0;
     }
   }
 }
