@@ -10,6 +10,43 @@ void sigchld_handler(int sig) { // zapobiega zombie
   while (waitpid(-1, 0, WNOHANG) > 0)
     continue;
 }
+
+void reverse_line(int new_socket, int position) {
+  while (1) {
+    char line[65535] = {0};
+    char reverse_line[65535] = {0};
+
+    ssize_t bytes = read(new_socket, &line, 65535);
+
+    if (bytes <= 0) {
+      close(new_socket);
+      break;
+    }
+
+    position = bytes - 2;
+
+    if (position < 0) {
+      close(new_socket);
+      break;
+    }
+
+    if (position == 2) {
+      close(new_socket);
+      break;
+    }
+
+    int len = position;
+    for (int i = 0; i <= len; i++) {
+      reverse_line[i] = line[len - i];
+    }
+    reverse_line[len + 1] = '\r';
+    reverse_line[len + 2] = '\n';
+
+    send(new_socket, reverse_line, len + 3, 0);
+    position = 0;
+  }
+}
+
 void launch(struct Server *server) {
 
   while (1) {
@@ -34,43 +71,12 @@ void launch(struct Server *server) {
     }
 
     if (pid == 0) {
-      close(server->socket); // ponoc dziecko nie potrzebuje gniazda
-                             // nasluchujacego??
+      close(server->socket);
 
       int position = 0;
-      while (1) {
-        char line[65535] = {0};
-        char reverse_line[65535] = {0};
 
-        ssize_t bytes = read(new_socket, &line, 65535);
+      reverse_line(new_socket, position);
 
-        if (bytes <= 0) {
-          close(new_socket);
-          break;
-        }
-
-        position = bytes - 2;
-
-        if (position < 0) {
-          close(new_socket);
-          break;
-        }
-
-        if (position == 2) {
-          close(new_socket);
-          break;
-        }
-
-        int len = position;
-        for (int i = 0; i <= len; i++) {
-          reverse_line[i] = line[len - i];
-        }
-        reverse_line[len + 1] = '\r';
-        reverse_line[len + 2] = '\n';
-
-        send(new_socket, reverse_line, len + 3, 0);
-        position = 0;
-      }
       close(new_socket);
       exit(0);
     } else {
