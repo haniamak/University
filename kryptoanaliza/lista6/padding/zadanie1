@@ -1,0 +1,127 @@
+#!/usr/bin/python3
+
+import rsa.rsa as rsa
+import rsa.pkcs15pad as pad
+from rsa.oracle import Oracle
+from sys import argv
+
+# keyFile = 'bleichenbacher/RSAkey1'
+# ciphertextFile = 'bleichenbacher/cipher1.txt'
+keyFile = 'bleichenbacher/RSAkey2'
+ciphertextFile = 'bleichenbacher/cipher2.txt'
+
+print("""All you need is the encryption key, the eavesdropped ciphertext,
+and the oracle. The oracle needs the private key, so in fact the key
+we read here is private. Pretend you do not have access to the private
+part!""")
+
+key = rsa.read(keyFile)
+with open(ciphertextFile) as cf:
+    ciphertext = int(cf.readline().strip())
+#oracle = Oracle(key).simpleOracle
+oracleobj = Oracle(key)
+oracle = oracleobj.simpleOracle
+#oracle = oracleobj.oracle
+
+print('This is your key of size {} bits ({} bytes):'.format
+         (key.keyBits, key.keyBytes))
+print('n =', key.n)
+print('e =', key.e)
+print('ciphertext =', ciphertext)
+print('oracle =', oracle)
+print('Now is YOUR turn!')
+
+def floor(a, b):
+    return a // b
+
+
+def ceil(a, b):
+    return a // b + (a % b > 0)
+
+B = 2 **(8 * (key.keyBytes - 2))
+a0 = 2 * B
+b0 = 3 * B - 1
+
+s0 = ceil((key.n + a0), b0) # slajd 21
+M0 = set([(a0, b0)])
+
+print(M0)
+
+def bleichenbacher_step1(lowerbound):
+    s = lowerbound
+    while True:
+        new_ciphertext = (pow(s, key.e, key.n) * ciphertext) % key.n
+        if oracle(new_ciphertext) == pad.ErrorCode.SUCCESS:
+            return s
+        s = s + 1
+        # print('Trying s =', s)
+
+
+
+def bleichenbacher_step1opt(s, a, b):
+    r = ceil(2 * (b * s - a0), key.n) # slajd 39
+    while True:
+        low_bound = ceil((a0 + r * key.n), b)
+        high_bound = floor((b0 + r * key.n), a)
+        for s in range(low_bound, high_bound + 1):
+            new_ciphertext = (pow(s, key.e, key.n) * ciphertext) % key.n
+            if oracle(new_ciphertext) == pad.ErrorCode.SUCCESS:
+                return s
+            
+        r = r + 1
+
+
+
+def bleichenbacher_step2(s, M):
+    new_M = set()
+    for (a, b) in M:
+        r_min = ceil((a * s - 3 * B + 1), key.n) # slajd 26
+        r_max = floor((b * s - 2 * B), key.n) # slajd 26
+        for r in range(r_min, r_max + 1):
+            new_a = max(a, ceil(2 * B + r * key.n, s)) # slajd 39
+            new_b = min(b, floor(3 * B - 1 + r * key.n, s)) # slajd 39
+            if new_a <= new_b:
+                new_M.add((new_a, new_b))
+    return new_M
+
+import time
+start = time.time()
+
+s0 = bleichenbacher_step1(s0)
+print('Found s =', s0)
+M0 = bleichenbacher_step2(s0, M0)
+print('M0 =', M0)
+
+while True:
+    if len(M0) > 1:
+        s0 = bleichenbacher_step1(s0)
+        print('Found s0 =', s0)
+    else:
+        interval = M0.pop()
+        M0.add(interval)
+        if interval[0] == interval[1]:
+            print('Found plaintext:', interval[0])
+            EB = interval[0].to_bytes(key.keyBytes, byteorder='big')
+            message = pad.dec(EB)
+            print('Message:', message.decode('utf-8'))
+            end = time.time()
+            with open('bleichenbacher/bleichenbacher_out.txt', 'a') as out:
+                out.write('Key file: ' + keyFile + '\n')
+                out.write('Ciphertext file: ' + ciphertextFile + '\n')
+                out.write('Oracle used: ' + str(oracle) + '\n')
+                out.write('Message: ' + message.decode('utf-8') + '\n')
+                out.write('Time passed: {} seconds\n'.format(end - start))
+                out.write('Oracle calls: ' + str(oracleobj.count()) + '\n')
+                out.write('----------------------------------------\n')
+            
+            break
+        s0 = bleichenbacher_step1opt(s0, interval[0], interval[1])
+        print('Found s0 (opt) =', s0)
+
+
+    M0 = bleichenbacher_step2(s0, M0)
+    print('M0 =', M0)
+    if not M0:
+        print("ERROR: M0 is empty")
+        break
+

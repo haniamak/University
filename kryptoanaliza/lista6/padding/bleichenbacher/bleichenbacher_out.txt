@@ -1,0 +1,21 @@
+Key file: bleichenbacher/RSAkey1
+Ciphertext file: bleichenbacher/cipher1.txt
+Oracle used: <bound method Oracle.simpleOracle of <rsa.oracle.Oracle object at 0x7fcf893692b0>>
+Message: This Bleichenbacher attack is really something!
+Time passed: 3.345876693725586 seconds
+Oracle calls: 6016
+----------------------------------------
+Key file: bleichenbacher/RSAkey1
+Ciphertext file: bleichenbacher/cipher1.txt
+Oracle used: <bound method Oracle.oracle of <rsa.oracle.Oracle object at 0x7fea881012b0>>
+Message: This Bleichenbacher attack is really something!
+Time passed: 15.557822704315186 seconds
+Oracle calls: 28411
+----------------------------------------
+Key file: bleichenbacher/RSAkey2
+Ciphertext file: bleichenbacher/cipher2.txt
+Oracle used: <bound method Oracle.simpleOracle of <rsa.oracle.Oracle object at 0x7fb2e29812b0>>
+Message: Daniel Bleichenbacher, Chosen Ciphertext Attacs Against Protocols Based on the RSA Encryption Standard PKCS#1, 1998
+Time passed: 26.571686506271362 seconds
+Oracle calls: 8758
+----------------------------------------

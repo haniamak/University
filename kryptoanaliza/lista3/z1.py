@@ -27,23 +27,31 @@ right_template = """<html>
 </html>
 """
 
-def sha256_hex(s: str) -> str:
-  return hashlib.sha256(s.encode('utf-8')).hexdigest()
+def hash(s):
+    m = hashlib.sha256()
+    m.update(s.encode("utf-8"))
+    return m.digest()
+
 
 def find_collision_24bit():
-  seen = {}  # prefix -> (nonce, hash)
+  seen_left = {}  # prefix -> (nonce, hash)
+  seen_right = {}  # prefix -> (nonce, hash)
   while True:
-    nonce_left = random.randint(0, 2**16)
-    nonce_right = random.randint(0, 2**16)
+    nonce_left = random.randint(0, 2**13)
+    nonce_right = random.randint(0, 2**13)
     left = left_template.format(nonce=nonce_left)
     right = right_template.format(nonce=nonce_right)
 
-    hash_left = sha256_hex(left)[:6]
-    hash_right = sha256_hex(right)[:6]
+    hash_left = hash(left).hex()[:6]
+    hash_right = hash(right).hex()[:6]
 
-    seen[hash_left] = (nonce_left, hash_left)
-    if hash_right in seen and seen[hash_right][0] != nonce_right:
-      return seen[hash_right], (nonce_right, hash_right), hash_right
+    seen_left[hash_left] = (nonce_left, hash_left)
+    seen_right[hash_right] = (nonce_right, hash_right)
+  
+    if hash_left in seen_right and seen_right[hash_left][0] != nonce_left:
+      return (nonce_left, hash_left), seen_right[hash_left], hash_left
+    if hash_right in seen_left and seen_left[hash_right][0] != nonce_right:
+      return seen_left[hash_right], (nonce_right, hash_right), hash_right
 
 
 found_left, found_right, prefix = find_collision_24bit()
