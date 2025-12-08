@@ -18,7 +18,8 @@ struct Server {
   struct sockaddr_in address;
 
   int socket;
-  WOLFSSL_CTX *ctx; // Dodane pole kontekstu TLS
+  WOLFSSL_CTX *ctx; // Dodanie contextu WOLFSSL
+  WOLFSSL *ssl;     // tls session
 
   void (*launch)(struct Server *server);
 };

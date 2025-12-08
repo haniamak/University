@@ -40,19 +40,16 @@ struct Server server_constructor(int domain, int service, int protocol,
   if (listen(server.socket, server.backlog) < 0) {
     perror("Failed to listen on socket");
     exit(1);
-    server.ctx = wolfSSL_CTX_new(wolfTLSv1_2_server_method());
-    if (!server.ctx) {
-      printf("wolfSSL_CTX_new error\n");
-      exit(1);
-    }
   }
 
   // Inicjalizacja kontekstu TLS
-  server.ctx = wolfSSL_CTX_new(wolfTLSv1_2_server_method());
+  server.ctx = wolfSSL_CTX_new(wolfTLSv1_3_server_method());
   if (!server.ctx) {
     printf("wolfSSL_CTX_new error\n");
     exit(1);
   }
+
+  // w tutorialu 31:17 jest jeszcze peer verficiation, czy ja tego potrzebuje?
 
   // Wczytanie certyfikatu
   if (wolfSSL_CTX_use_certificate_file(server.ctx, "server-cert.pem",
@@ -68,7 +65,7 @@ struct Server server_constructor(int domain, int service, int protocol,
     exit(1);
   }
 
-  server.launch = launch;
+  // server.launch = launch;
 
   return server;
 };

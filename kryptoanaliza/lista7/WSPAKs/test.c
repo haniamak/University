@@ -4,44 +4,115 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
+#include <wolfssl/ssl.h>
 
 void sigchld_handler(int sig) { // zapobiega zombie
   while (waitpid(-1, 0, WNOHANG) > 0)
     continue;
 }
 
-void reverse_line(WOLFSSL *ssl,
-                  int position) { // juz nie prosty socket tylko WOLFSSL
+ssize_t ssl_write_all(WOLFSSL *ssl, const void *buf, size_t len) {
+  size_t total_sent = 0;
+
+  while (total_sent < len) {
+    int ret =
+        wolfSSL_write(ssl, (const char *)buf + total_sent, len - total_sent);
+
+    if (ret <= 0) {
+      int err = wolfSSL_get_error(ssl, ret);
+      if (err == WOLFSSL_ERROR_WANT_READ || err == WOLFSSL_ERROR_WANT_WRITE) {
+        continue; // spróbuj ponownie
+      }
+      return -1; // błąd
+    }
+
+    total_sent += ret;
+  }
+  return total_sent;
+}
+
+// int reverse_line(WOLFSSL *ssl, int position) {
+//   while (1) {
+//     char line[65535] = {0};
+//     char reverse_line[65535] = {0};
+
+//     ssize_t bytes = wolfSSL_read(ssl, &line, 65535); // czytanie z ssl
+
+//     if (bytes <= 0) {
+//       printf("SSL read error or connection closed\n");
+//       return -1; // błąd lub zamknięcie połączenia
+//     }
+
+//     position = bytes - 2;
+
+//     if (position < 0) {
+//       printf("empty line\n");
+//       return -1; // zła linia
+//     }
+
+//     int len = position;
+//     for (int i = 0; i < len; i++) {
+//       reverse_line[i] = line[len - i];
+//     }
+//     reverse_line[len] = '\r';
+//     reverse_line[len + 1] = '\n';
+
+//     // TODO : sprawdzic czy wszystko zostalo wyslane
+//     if (ssl_write_all(ssl, reverse_line, len + 2) < 0) {
+//       fprintf(stderr, "SSL write error\n");
+//       return -1;
+//     }
+
+//     position = 0;
+//   }
+//   return 0;
+// }
+
+int reverse_line(WOLFSSL *ssl) {
   while (1) {
     char line[65535] = {0};
     char reverse_line[65535] = {0};
 
-    ssize_t bytes = wolfSSL_read(ssl, &line, 65535); // czytanie z ssl
-
+    ssize_t bytes = wolfSSL_read(ssl, line, sizeof(line));
     if (bytes <= 0) {
-      break;
+      printf("SSL read error or connection closed\n");
+      return -1;
     }
 
-    position = bytes - 2;
+    int len;
 
-    if (position < 0) {
-      break;
+    // CRLF
+    if (bytes >= 2 && line[bytes - 2] == '\r' && line[bytes - 1] == '\n') {
+      len = bytes - 2;
+    }
+    // tylko LF
+    else if (line[bytes - 1] == '\n') {
+      len = bytes - 1;
+    } else {
+      printf("Invalid line ending\n");
+      return -1;
     }
 
-    if (position == 2) {
-      break;
+    if (len <= 0) {
+      break; // pusta linia → ignoruj
     }
 
-    int len = position;
-    for (int i = 0; i <= len; i++) {
-      reverse_line[i] = line[len - i];
+    // Odwracanie prawidłowe
+    for (int i = 0; i < len; i++) {
+      reverse_line[i] = line[len - 1 - i];
     }
-    reverse_line[len + 1] = '\r';
-    reverse_line[len + 2] = '\n';
 
-    wolfSSL_write(ssl, reverse_line, len + 3);
-    position = 0;
+    // Dodaj tylko LF
+    reverse_line[len] = '\n';
+
+    // Wyślij
+    if (ssl_write_all(ssl, reverse_line, len + 1) < 0) {
+      fprintf(stderr, "SSL write error\n");
+      return -1;
+    }
   }
+
+  return 0;
 }
 
 void launch(struct Server *server) {
@@ -52,11 +123,19 @@ void launch(struct Server *server) {
     struct sockaddr_in client_address;
     socklen_t client_len = sizeof(client_address);
 
-    int new_socket =
-        accept(server->socket, (struct sockaddr *)&client_address, &client_len);
-    if (new_socket < 0) {
-      perror("Failed to accept connection");
-      continue;
+    int new_socket;
+    while (1) {
+      new_socket = accept(server->socket, (struct sockaddr *)&client_address,
+                          &client_len);
+
+      if (new_socket < 0) {
+        if (errno == EINTR) {
+          continue; // ponów accept()
+        }
+        perror("Failed to accept connection");
+        break;
+      }
+      break; // accept OK
     }
 
     pid_t pid = fork();
@@ -83,13 +162,17 @@ void launch(struct Server *server) {
       if (wolfSSL_accept(ssl) != SSL_SUCCESS) { // Przeprowadzenie TLS handshake
         printf("TLS handshake failed\n");
         wolfSSL_free(ssl);
+        // wolfSSL_CTX_free(server->ctx);
+        // wolfSSL_Cleanup();
         close(new_socket);
         exit(1);
       }
 
       int position = 0;
 
-      reverse_line(ssl, position);
+      if (reverse_line(ssl) < 1) {
+        fprintf(stderr, "Error reversing line\n");
+      }
       wolfSSL_shutdown(ssl);
       wolfSSL_free(ssl);
       close(new_socket);
@@ -109,8 +192,14 @@ int main() {
   server.launch(&server);
 }
 
-// by skompilowac: cc test.c server.c -lwolfssl -o server
+// by skompilowac: gcc test.c server.c -lwolfssl -o server
 // by odpalic: ./server
 
 // w drugim terminalu; openssl s_client -connect localhost:7777
-// potem wpisac linie do odwrócenia
+// openssl s_client -connect localhost:7777 -CAfile server-cert.pem
+// albo bardziej tak
+// potem wpisac linie do
+
+// generowanie certyfikatu i klucza:
+// openssl genrsa - out server - key.pem 2048 openssl req - new - x509 -
+//    key server - key.pem - out server - cert.pem - days 365
